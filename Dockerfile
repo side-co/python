@@ -7,10 +7,10 @@ ENV LANG C.UTF-8
 ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apk update \
-	&& apk add --no-cache git openssh-client \
-	&& pip install pipenv
-
-RUN mkdir /app
+	&& apk upgrade --no-cache \
+	&& apk add --no-cache git \
+	&& pip install --no-cache-dir pipenv \
+	&& mkdir /app
 
 WORKDIR /app
 
