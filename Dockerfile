@@ -6,7 +6,8 @@ ENV LANG C.UTF-8
 # Python, don't write bytecode!
 ENV PYTHONDONTWRITEBYTECODE 1
 
-RUN apk upgrade --no-cache \
+RUN apk update \
+	&& apk upgrade --no-cache \
 	&& apk add --no-cache git \
 	&& pip install --no-cache-dir pipenv \
 	&& mkdir /app
