@@ -8,7 +8,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 
 RUN apk update \
 	&& apk upgrade --no-cache \
-	&& apk add --no-cache git \
+	&& apk add --no-cache git postgresql-dev gcc python3-dev musl-dev \
 	&& pip install --no-cache-dir pipenv \
 	&& mkdir /app
 
