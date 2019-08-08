@@ -1,16 +1,3 @@
-FROM python:3.7-alpine
+FROM side/python:3.7-alpine-pipenv
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV LC_ALL C.UTF-8
-ENV LANG C.UTF-8
-# Python, don't write bytecode!
-ENV PYTHONDONTWRITEBYTECODE 1
-
-RUN apk update \
-	&& apk upgrade --no-cache \
-	&& apk add --no-cache git postgresql-dev gcc python3-dev musl-dev \
-	&& pip install --no-cache-dir pipenv \
-	&& mkdir /app
-
-WORKDIR /app
-
+RUN apk add --no-cache postgresql-dev gcc musl-dev
