@@ -1,16 +1,11 @@
-FROM python:3.7-alpine
+FROM side/python:3.7-alpine-pipenv
 
-ENV DEBIAN_FRONTEND noninteractive
-ENV LC_ALL C.UTF-8
-ENV LANG C.UTF-8
-# Python, don't write bytecode!
-ENV PYTHONDONTWRITEBYTECODE 1
-
-RUN apk update \
-	&& apk upgrade --no-cache \
-	&& apk add --no-cache git \
-	&& pip install --no-cache-dir pipenv \
-	&& mkdir /app
-
-WORKDIR /app
-
+RUN apk add --no-cache \
+	build-base \
+        libffi-dev \
+        libxml2-dev \
+        libxslt-dev \
+        libreoffice \
+        msttcorefonts-installer \
+        fontconfig \
+    && update-ms-fonts && fc-cache -f
