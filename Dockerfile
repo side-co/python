@@ -14,7 +14,3 @@ RUN apk update \
 
 WORKDIR /app
 
-ONBUILD COPY Pipfile Pipfile
-ONBUILD COPY Pipfile.lock Pipfile.lock
-
-ONBUILD RUN pipenv install --deploy --system
