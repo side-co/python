@@ -1,4 +1,4 @@
-# Lightweight images with pythnon 3.7 and Pipenv
+# Images with python 3.7 and Pipenv
 
 Image used to make our python builds and Gitlab CI pipelines.
 
